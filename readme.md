@@ -27,4 +27,10 @@
     python manage.py migrate
     ```
 
+5. Criar super user
+
+    ```
+    python manage.py createsuperuser
+    ```
+
 [Curso](https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p) de Django
