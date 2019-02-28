@@ -1,5 +1,7 @@
 {% extends 'blog/base.html' %}
+{% load static%}
 {% load crispy_forms_tags %}
+{% block script %} <script src="{% static 'users/js/script.js' %}"></script> {% endblock script %}
 {% block title %} {{ user.username }}'s profile {% endblock title %}
 {% block content %}
     <div class='content-section'>
@@ -10,7 +12,10 @@
                 <p class="text-secondary">{{ user.email }}</p>
             </div>
         </div>
-        <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <button id="updateButton" class="btn btn-info" onclick="updateProfile(true)">Edit profile</button>
+        </div>
+        <form method="POST" enctype="multipart/form-data" id="form">
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Profile info</legend>
@@ -18,8 +23,9 @@
                 {{ profile_update_form | crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Update</button>
+                <button class="btn btn-info" type="submit">Update</button>
+                <button class="btn btn-outline-info" type="button" onclick="updateProfile(false)">Cancel</button>
             </div>
         </form>
     </div>
-{% endblock content%}
+{% endblock content %}
