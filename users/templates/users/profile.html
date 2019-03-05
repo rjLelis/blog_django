@@ -1,10 +1,10 @@
 {% extends 'blog/base.html' %}
 {% load static%}
 {% load crispy_forms_tags %}
-{% block script %} <script src="{% static 'users/js/script.js' %}"></script> {% endblock script %}
+{% block script %} <script src="{% static 'users/js/scripts.js' %}"></script> {% endblock script %}
 {% block title %} {{ user.username }}'s profile {% endblock title %}
 {% block content %}
-    <div class='content-section'>
+    <div class='content-section' id="user-info">
         <div class="media">
             <img src="{{ user.profile.image.url }}" class="rounded-circle account-img">
             <div class='media-body'>
