@@ -1,4 +1,4 @@
-{% extends 'blog/base.html '%}
+{% extends 'blog/base.html' %}
 {% block title %} {{ object.title }} {% endblock title %}
 {% block content %}
     <article class="media content-section">
@@ -7,6 +7,11 @@
             <div class="media-body">
                 <a href="#" class="mr-2">{{object.author}}</a>
                 <small class="text-muted">{{object.date_posted | date:'d/m/Y h:i:s'}}</small>
+                {% if object.author == user %}
+                <div>
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'blog:post-update' object.id %}">Update</a>
+                </div>
+                {% endif %}
             </div>
             <h2 class="article-title"> {{object.title}}</h2>
             <p class="article-content">{{object.content}}</p>

@@ -10,7 +10,18 @@
                 {{ form | crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Save</button>
+                <button class="btn btn-info" type="submit">
+                    {% if object.id %}
+                        Update
+                    {% else %}
+                        Post
+                    {% endif %}
+                </button>
+                {% if object.id %}
+                    <a class="btn btn-outline-danger" href="{% url 'blog:post-detail' object.id %}">Back</a>
+                {% else %}
+                    <a class="btn btn-outline-danger" href="{% url 'blog:home' %}">Cancel</a>
+                {% endif %}
             </div>
         </form>
     </div>
