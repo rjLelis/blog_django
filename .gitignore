@@ -191,4 +191,4 @@ dmypy.json
 
 # End of https://www.gitignore.io/api/python,django,visualstudiocode
 
-/profile_pics/*
+/media/profile_pics/*
