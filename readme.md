@@ -35,6 +35,10 @@
     python manage.py createsuperuser
     ```
 
+#### Obs: O arquivo `post.json` serve para alimentar o banco de dados com as postagens. Para não haver conflito com o id do usuário, é necessário fazer a alteração no arquivo.
+
+#### Obs2: Algumas implementações são minhas.
+
 [Curso](https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p) de Django
 
-#### Obs: Algumas implementações são minhas.
+
