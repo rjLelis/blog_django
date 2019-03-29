@@ -3,11 +3,9 @@ window.onload = function(){
 }
 
 let updateProfile = (showForm) => {
-    if(showForm){
-        document.getElementById("updateButton").style.display = "none";
-        document.getElementById("form").style.display = "block";
-    } else {
-        document.getElementById("updateButton").style.display = "block";
-        document.getElementById("form").style.display = "none";
-    }    
+    let form = document.getElementById("form");
+    let updateButton = document.getElementById('updateButton');
+
+    updateButton.style.display = showForm ? "none" : "block";
+    form.style.display = showForm ? "block" : "none"
 }
