@@ -12,7 +12,6 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-    ''' namespace='users' ''''
 """
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
@@ -23,7 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls', namespace='blog')),
-    path('user/', include('users.urls')),
+    path('user/', include('users.urls', namespace='users')),
     path('password-reset/', 
         auth_views.PasswordResetView.as_view(template_name='users/password_reset.html'), 
     name="password_reset"),
