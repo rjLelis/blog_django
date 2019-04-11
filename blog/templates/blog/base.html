@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <link rel="stylesheet" href="{% static 'blog/css/main.css'%}">
     
     <script src="{% static 'blog/js/scripts.js' %}"></script>
@@ -53,8 +55,9 @@
                 <div class="col-md-8">
                     {% if messages %}
                         {% for message in messages %}
-                            <div class="alert alert-{{ message.tags }}" id="message" onclick="removeFeedBackMessage(this)">
+                            <div class="alert alert-{{ message.tags }}" id="message">
                                 {{ message }}
+                                <i style='float: right; cursor: pointer' onclick="removeFeedBackMessage(message)" class="material-icons">&#xe14c;</i>
                             </div>
                         {% endfor %}
                     {% endif %}
