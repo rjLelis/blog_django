@@ -40,6 +40,7 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'content']
+    success_message = 'Your post has been created!'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
