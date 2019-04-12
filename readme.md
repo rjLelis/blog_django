@@ -5,34 +5,35 @@
 1.  Criar um `virtual environment`
 
     ```
-    virtualenv env
-    Scripts\activate
+    >virtualenv venv
+    >cd venv
+    >Scripts\activate
     ```
 
-2. Clonar o repositório
+2. Clonar o `repositório`
     
     ```
-    mkdir blog_django
-    cd blog_django
-    git clone git@github.com:rjLelis/blog_django.git
+    >mkdir blog_django
+    >cd blog_django
+    >git clone git@github.com:rjLelis/blog_django.git
     ```
 
-3. Instalar as dependências
+3. Instalar as `dependências`
 
     ```
-    pip install -r requirements.txt
+    >pip install -r requirements.txt
     ```
 
-4. Rodar as migrações
+4. Rodar as `migrações`
 
     ```
-    python manage.py migrate
+    >python manage.py migrate
     ```
 
-5. Criar super user
+5. Criar `super user`
 
     ```
-    python manage.py createsuperuser
+    >python manage.py createsuperuser
     ```
 
 #### Obs: O arquivo `post.json` serve para alimentar o banco de dados com as postagens. Para não haver conflito com o id do usuário, é necessário fazer a alteração no arquivo.
