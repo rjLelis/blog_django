@@ -23,7 +23,7 @@
                 {{ profile_update_form | crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-info" type="submit">Update</button>
+                <button class="btn btn-info" type="submit" onclick="return formValidate()">Update</button>
                 <button class="btn btn-outline-info" type="button" onclick="updateProfile(false)">Cancel</button>
             </div>
         </form>
