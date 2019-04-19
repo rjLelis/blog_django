@@ -1,8 +1,8 @@
-window.onload = function(){
+window.onload = () => {
     document.getElementById("form").style.display = "none";
 }
 
-let updateProfile = (showForm) => {
+const updateProfile = (showForm) => {
     let form = document.getElementById("form");
     let updateButton = document.getElementById('updateButton');
 
@@ -10,11 +10,17 @@ let updateProfile = (showForm) => {
     form.style.display = showForm ? "block" : "none"
 }
 
-let formValidate = () => {
-    let username = document.getElementById('id_username').value;
-    if (username === '') {
-        document.getElementById('hint_id_username').innerHTML = 'Este campo é obrigatório'
-        return false
+const formValidate = () => {
+    let isFormValid = true;
+    const username = document.getElementById('id_username');
+    if (username.value.trim() === '') {
+        username.placeholder = 'Este campo é obrigatório!';
+        isFormValid = false;
     }
-    return true;
+    const email = document.getElementById('id_email');
+    if (email.value.trim() === '') {
+        email.placeholder = 'Este campo é obrigatório!';
+        isFormValid = false;
+    }
+    return isFormValid;
 }
