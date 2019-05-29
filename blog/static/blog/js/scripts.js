@@ -1,3 +1,1 @@
-const removeFeedBackMessage = (message) => {
-    message.style.display = 'none';
-}
+const removeFeedBackMessage = message => message.style.display = 'none';

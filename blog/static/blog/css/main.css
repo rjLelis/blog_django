@@ -11,6 +11,10 @@ body {
   ul {
     margin: 0;
   }
+
+  .hide {
+    display: none;
+  }
   
   .bg-steel {
     background-color: #5f788a;

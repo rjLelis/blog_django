@@ -1,14 +1,22 @@
-window.onload = () => {
-    document.getElementById("form").style.display = "none";
+const form = document.getElementById('form');
+const updateButton = document.getElementById('update-button');
+const cancelButton = document.getElementById('cancel-button');
+
+cancelButton.onclick = () => {
+    addClass(form, 'hide');
+    addClass(cancelButton, 'hide');
+    removeClass(updateButton, 'hide');
 }
 
-const updateProfile = (showForm) => {
-    let form = document.getElementById("form");
-    let updateButton = document.getElementById('updateButton');
-
-    updateButton.style.display = showForm ? "none" : "block";
-    form.style.display = showForm ? "block" : "none"
+updateButton.onclick = () => {
+    removeClass(form, 'hide');
+    removeClass(cancelButton, 'hide');
+    addClass(updateButton, 'hide');
 }
+
+const removeClass = (element, className) => element.classList.remove(className);
+
+const addClass = (element, className) => element.classList.add(className);
 
 const formValidate = () => {
     let isFormValid = true;
