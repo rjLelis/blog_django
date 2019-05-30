@@ -85,7 +85,3 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'blog/about.html')
-
-
-def read_me(request):
-    return render(request, 'blog/readme.html')
